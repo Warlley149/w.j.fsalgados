@@ -1,7 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { createWhatsAppLink } from "../lib/whatsapp";
+import CategoriesSection from "../components/CategoriesSection.astro";
+import ServiceAreaSection from "../components/ServiceAreaSection.astro";
+import HowItWorksSection from "../components/HowItWorksSection.astro";
+import PartyCombosSection from "../components/PartyCombosSection.astro";
+import TestimonialsSection from "../components/TestimonialsSection.astro";
 ---
+
 <BaseLayout
   title="Salgados em São Lourenço da Mata | W.J.F SALGADOS"
   description="Encomende salgados para festas, eventos e momentos especiais em São Lourenço da Mata e região metropolitana do Recife."
@@ -43,13 +49,19 @@ import { createWhatsAppLink } from "../lib/whatsapp";
       <div class="rounded-3xl bg-white p-6 shadow-lg">
         <h2 class="text-2xl font-bold text-stone-900">Destaques</h2>
         <ul class="mt-5 space-y-3 text-stone-700">
-          <li>• Coxinhas, rissoles, empadinhas e travesseirinhos</li>
-          <li>• Churros pequenos e grandes</li>
-          <li>• Mini coxinhas de copo</li>
-          <li>• Combos para festas e encomendas personalizadas</li>
-          <li>• Retirada, motoUber e entrega sob consulta</li>
+          • Coxinhas, rissoles, empadinhas e travesseirinhos</li>
+          • Churros pequenos e grandes</li>
+          • Mini coxinhas de copo</li>
+          • Combos para festas e encomendas personalizadas</li>
+          • Retirada, motoUber e entrega sob consulta</li>
         </ul>
       </div>
     </div>
   </section>
+
+  <CategoriesSection />
+  <ServiceAreaSection />
+  <HowItWorksSection />
+  <PartyCombosSection />
+  <TestimonialsSection />
 </BaseLayout>

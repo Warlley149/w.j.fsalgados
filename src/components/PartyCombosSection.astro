@@ -1,0 +1,66 @@
+---
+import { createWhatsAppLink } from "../lib/whatsapp";
+---
+
+<section class="bg-stone-900 text-white">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="max-w-2xl">
+      <span class="rounded-full bg-orange-500/20 px-4 py-1 text-sm font-semibold text-orange-300">
+        Combos sugeridos
+      </span>
+      <h2 class="mt-4 text-3xl font-extrabold md:text-4xl">
+        Sugestões para festas e eventos
+      </h2>
+      <p class="mt-4 text-lg text-stone-300">
+        Se você ainda não sabe quanto pedir, podemos te ajudar com opções pensadas para diferentes quantidades de pessoas.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <article class="rounded-3xl bg-white/10 p-6 backdrop-blur">
+        <h3 class="text-2xl font-bold text-orange-300">Combo para 20 pessoas</h3>
+        <p class="mt-3 text-stone-200">
+          Uma sugestão prática para pequenas comemorações e encontros.
+        </p>
+        <a
+          href={createWhatsAppLink("Olá, vim pelo site e quero saber sobre o combo para 20 pessoas.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-5 inline-block rounded-full bg-orange-500 px-5 py-2.5 font-semibold text-white transition hover:bg-orange-600"
+        >
+          Consultar no WhatsApp
+        </a>
+      </article>
+
+      <article class="rounded-3xl bg-white/10 p-6 backdrop-blur">
+        <h3 class="text-2xl font-bold text-orange-300">Combo para 50 pessoas</h3>
+        <p class="mt-3 text-stone-200">
+          Ideal para aniversários, reuniões maiores e celebrações especiais.
+        </p>
+        <a
+          href={createWhatsAppLink("Olá, vim pelo site e quero saber sobre o combo para 50 pessoas.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-5 inline-block rounded-full bg-orange-500 px-5 py-2.5 font-semibold text-white transition hover:bg-orange-600"
+        >
+          Consultar no WhatsApp
+        </a>
+      </article>
+
+      <article class="rounded-3xl bg-white/10 p-6 backdrop-blur">
+        <h3 class="text-2xl font-bold text-orange-300">Combo para 100 pessoas</h3>
+        <p class="mt-3 text-stone-200">
+          Uma solução para eventos maiores e pedidos mais completos.
+        </p>
+        <a
+          href={createWhatsAppLink("Olá, vim pelo site e quero saber sobre o combo para 100 pessoas.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-5 inline-block rounded-full bg-orange-500 px-5 py-2.5 font-semibold text-white transition hover:bg-orange-600"
+        >
+          Consultar no WhatsApp
+        </a>
+      </article>
+    </div>
+  </div>
+</section>

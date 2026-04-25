@@ -1,24 +1,134 @@
 ---
-import { createWhatsAppLink } from "../lib/whatsapp";
+const whatsappLink =
+  "https://wa.me/558199608927?text=Olá%2C%20vim%20pelo%20site%20e%20quero%20fazer%20uma%20encomenda.";
 ---
 
-<header class="border-b border-amber-200 bg-white/90 backdrop-blur">
+<header class="sticky top-0 z-50 border-b border-amber-200/70 bg-white/90 backdrop-blur-md">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-    <a href="/" class="text-xl font-bold text-orange-600">W.J.F SALGADOS</a>
+    <a href="/" class="flex items-center gap-3">
+      <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-orange-500 text-lg font-extrabold text-white shadow-md">
+        W
+      </div>
 
-    <nav class="hidden gap-6 md:flex">
-      <a href="/" class="font-medium hover:text-orange-600">Início</a>
-      <a href="/cardapio" class="font-medium hover:text-orange-600">Cardápio</a>
-      <a href="/contato" class="font-medium hover:text-orange-600">Contato</a>
+      <div class="leading-tight">
+        <span class="block text-sm font-semibold uppercase tracking-[0.18em] text-orange-500">
+          Salgados
+        </span>
+        <span class="block text-lg font-extrabold text-stone-900">
+          W.J.F SALGADOS
+        </span>
+      </div>
+    </a>
+
+    <nav class="hidden items-center gap-6 md:flex">
+      <a href="/" class="font-medium text-stone-700 transition hover:text-orange-600">
+        Início
+      </a>
+      <a href="/cardapio" class="font-medium text-stone-700 transition hover:text-orange-600">
+        Cardápio
+      </a>
+      <a href="/contato" class="font-medium text-stone-700 transition hover:text-orange-600">
+        Contato
+      </a>
     </nav>
 
-    <a
-      href={createWhatsAppLink("Olá, vim pelo site e quero fazer um pedido de salgados para festa.")}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="rounded-full bg-orange-500 px-5 py-2.5 font-semibold text-white transition hover:bg-orange-600"
+    <div class="hidden md:block">
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-full bg-orange-500 px-5 py-2.5 font-semibold text-white shadow-md transition hover:bg-orange-600"
+      >
+        Pedir no WhatsApp
+      </a>
+    </div>
+
+    <button
+      id="menu-toggle"
+      type="button"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-amber-200 text-stone-800 transition hover:bg-orange-50 md:hidden"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
     >
-      Pedir no WhatsApp
-    </a>
+      <svg
+        id="menu-open-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+
+      <svg
+        id="menu-close-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        class="hidden h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-amber-200 bg-white px-4 pb-5 pt-4 shadow-md md:hidden"
+  >
+    <nav class="flex flex-col gap-3">
+      <a
+        href="/"
+        class="rounded-2xl px-4 py-3 font-medium text-stone-700 transition hover:bg-orange-50 hover:text-orange-600"
+      >
+        Início
+      </a>
+
+      <a
+        href="/cardapio"
+        class="rounded-2xl px-4 py-3 font-medium text-stone-700 transition hover:bg-orange-50 hover:text-orange-600"
+      >
+        Cardápio
+      </a>
+
+      <a
+        href="/contato"
+        class="rounded-2xl px-4 py-3 font-medium text-stone-700 transition hover:bg-orange-50 hover:text-orange-600"
+      >
+        Contato
+      </a>
+
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-2 rounded-full bg-orange-500 px-5 py-3 text-center font-semibold text-white shadow-md transition hover:bg-orange-600"
+      >
+        Pedir no WhatsApp
+      </a>
+    </nav>
   </div>
 </header>
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const openIcon = document.getElementById("menu-open-icon");
+  const closeIcon = document.getElementById("menu-close-icon");
+
+  menuToggle?.addEventListener("click", () => {
+    const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+
+    menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+    menuToggle.setAttribute("aria-label", isExpanded ? "Abrir menu" : "Fechar menu");
+
+    mobileMenu?.classList.toggle("hidden");
+    openIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
+  });
+</script>

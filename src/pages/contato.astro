@@ -4,47 +4,137 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Contato | W.J.F SALGADOS"
-  description="Entre em contato para encomendar salgados em São Lourenço da Mata e região."
+  description="Entre em contato com a W.J.F SALGADOS para encomendas, dúvidas e pedidos em São Lourenço da Mata e região."
 >
-  <section class="mx-auto max-w-4xl px-4 py-16">
-    <h1 class="text-4xl font-extrabold text-stone-900">Fale conosco</h1>
-    <p class="mt-4 text-lg text-stone-700">
-      Faça seu pedido, tire dúvidas sobre preços, entrega, retirada e encomendas personalizadas pelo WhatsApp.
-    </p>
+  <section class="bg-gradient-to-br from-amber-100 via-orange-50 to-red-100">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <div class="max-w-2xl">
+        <span class="rounded-full bg-orange-100 px-4 py-1 text-sm font-semibold text-orange-700">
+          Fale conosco
+        </span>
 
-    <div class="mt-10 grid gap-6 md:grid-cols-2">
-      <article class="rounded-3xl bg-white p-6 shadow-md">
-        <h2 class="text-2xl font-bold text-orange-600">WhatsApp</h2>
-        <p class="mt-3 text-stone-700">Atendimento para pedidos, dúvidas e orçamento.</p>
-        <a
-          href="https://wa.me/5581996089272"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="mt-5 inline-block rounded-full bg-green-500 px-6 py-3 font-semibold text-white transition hover:bg-green-600"
-        >
-          Chamar no WhatsApp
-        </a>
-      </article>
+        <h1 class="mt-4 text-4xl font-extrabold text-stone-900 md:text-5xl">
+          Entre em contato para fazer sua encomenda
+        </h1>
 
-      <article class="rounded-3xl bg-white p-6 shadow-md">
-        <h2 class="text-2xl font-bold text-orange-600">Instagram</h2>
-        <p class="mt-3 text-stone-700">Acompanhe novidades, fotos e atualizações da empresa.</p>
-        <a
-          href="https://instagram.com/warlley149/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="mt-5 inline-block rounded-full border border-pink-500 px-6 py-3 font-semibold text-pink-600 transition hover:bg-pink-50"
-        >
-          Ver Instagram
-        </a>
-      </article>
-    </div>
+        <p class="mt-4 text-lg text-stone-700">
+          Atendemos pedidos para festas, eventos, lanches e encomendas personalizadas. Se quiser agilizar, chame diretamente no WhatsApp.
+        </p>
+      </div>
 
-    <div class="mt-10 rounded-3xl bg-amber-100 p-6">
-      <h2 class="text-2xl font-bold text-stone-900">Regiões atendidas</h2>
-      <p class="mt-3 text-stone-700">
-        São Lourenço da Mata, Camaragibe, Caxangá, parte do Recife, Várzea, Curado, Iputinga, além de atendimento sob consulta para Paudalho e Carpina.
-      </p>
+      <div class="mt-12 grid gap-8 md:grid-cols-2">
+        <article class="rounded-3xl bg-white p-6 shadow-lg">
+          <h2 class="text-2xl font-bold text-stone-900">Contato rápido</h2>
+
+          <div class="mt-6 space-y-4 text-stone-700">
+            <p><strong>WhatsApp:</strong> (5581996089272)</p>
+            <p><strong>Instagram:</strong> @w.j.f salgados</p>
+            <p><strong>Atendimento:</strong> Segunda a sábado, 24h</p>
+            <p><strong>Região:</strong> São Lourenço da Mata, Camaragibe, Caxangá, Várzea, Curado, Iputinga e proximidades</p>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href="https://wa.me/5581996089272?text=Olá%2C%20vim%20pelo%20site%20e%20quero%20fazer%20uma%20encomenda."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-full bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600"
+            >
+              Chamar no WhatsApp
+            </a>
+
+            <a
+              href="https://instagram.com/w.j.fsalgados/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-full border border-orange-500 px-6 py-3 font-semibold text-orange-600 transition hover:bg-orange-50"
+            >
+              Ver Instagram
+            </a>
+          </div>
+        </article>
+
+        <article class="rounded-3xl bg-white p-6 shadow-lg">
+          <h2 class="text-2xl font-bold text-stone-900">Envie sua mensagem</h2>
+
+          <form id="contact-form" class="mt-6 space-y-4">
+            <div>
+              <label for="nome" class="mb-2 block font-medium text-stone-800">
+                Seu nome
+              </label>
+              <input
+                id="nome"
+                name="nome"
+                type="text"
+                placeholder="Digite seu nome"
+                class="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none transition focus:border-orange-500"
+              />
+            </div>
+
+            <div>
+              <label for="telefone" class="mb-2 block font-medium text-stone-800">
+                Seu telefone
+              </label>
+              <input
+                id="telefone"
+                name="telefone"
+                type="text"
+                placeholder="Digite seu telefone"
+                class="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none transition focus:border-orange-500"
+              />
+            </div>
+
+            <div>
+              <label for="mensagem" class="mb-2 block font-medium text-stone-800">
+                Sua mensagem
+              </label>
+              <textarea
+                id="mensagem"
+                name="mensagem"
+                rows="5"
+                placeholder="Escreva seu pedido ou sua dúvida"
+                class="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none transition focus:border-orange-500"
+              ></textarea>
+            </div>
+
+            <button
+              id="send-whatsapp"
+              type="button"
+              class="rounded-full bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600"
+            >
+              Enviar mensagem
+            </button>
+          </form>
+
+          <p class="mt-4 text-sm text-stone-500">
+            Ao clicar em enviar, sua mensagem será aberta no WhatsApp com os dados preenchidos.
+          </p>
+        </article>
+      </div>
     </div>
   </section>
+
+  <script>
+    const button = document.getElementById("send-whatsapp");
+    const nomeInput = document.getElementById("nome");
+    const telefoneInput = document.getElementById("telefone");
+    const mensagemInput = document.getElementById("mensagem");
+
+    const phone = "5581996089272";
+
+    button?.addEventListener("click", () => {
+      const nome = nomeInput instanceof HTMLInputElement ? nomeInput.value.trim() : "";
+      const telefone = telefoneInput instanceof HTMLInputElement ? telefoneInput.value.trim() : "";
+      const mensagem = mensagemInput instanceof HTMLTextAreaElement ? mensagemInput.value.trim() : "";
+
+      const finalMessage =
+        `Olá, vim pelo site da W.J.F SALGADOS.%0A%0A` +
+        `Nome: ${nome || "Não informado"}%0A` +
+        `Telefone: ${telefone || "Não informado"}%0A` +
+        `Mensagem: ${mensagem || "Olá, quero fazer uma encomenda."}`;
+
+      const url = `https://wa.me/${phone}?text=${finalMessage}`;
+      window.open(url, "_blank");
+    });
+  </script>
 </BaseLayout>

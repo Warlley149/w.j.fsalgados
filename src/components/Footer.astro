@@ -1,24 +1,90 @@
-<footer class="mt-16 bg-stone-900 text-stone-100">
-  <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3">
-    <div>
-      <h2 class="mb-3 text-lg font-bold">W.J.F SALGADOS</h2>
-      <p class="text-sm text-stone-300">
-        Sabor, qualidade e carinho em cada encomenda para São Lourenço da Mata e região.
-      </p>
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-stone-950 text-stone-200">
+  <div class="mx-auto max-w-6xl px-4 py-14">
+    <div class="grid gap-10 md:grid-cols-2 xl:grid-cols-4">
+      <div>
+        <h2 class="text-2xl font-extrabold text-white">W.J.F SALGADOS</h2>
+        <p class="mt-4 text-sm leading-6 text-stone-400">
+          Salgados para festas, eventos, lanches e encomendas especiais em São Lourenço da Mata e região.
+        </p>
+
+        <div class="mt-5">
+          <a
+            href="https://wa.me/5581996089272?text=Olá%2C%20vim%20pelo%20site%20e%20quero%20fazer%20uma%20encomenda."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex rounded-full bg-orange-500 px-5 py-2.5 font-semibold text-white transition hover:bg-orange-600"
+          >
+            Pedir no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-white">Navegação</h3>
+        <ul class="mt-4 space-y-3 text-sm text-stone-40000">
+          >
+            <a href="/" class="transition hover:text-orange-400">Início</a>
+          </l/li>
+          >
+            <a href="/cardapio" class="transition hover:text-orange-400">Cardápio</a>
+          </l/li>
+          >
+            <a href="/contato" class="transition hover:text-orange-400">Contato</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-white">Contato</h3>
+        <ul class="mt-4 space-y-3 text-sm text-stone-40000">
+          >WhatsApp: (81996089272)</l/li>
+          >Instagram: @w.j.f salgados</li>
+          >Atendimento: segunda a sábado</li>
+          >Entrega e retirada sob consulta</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-white">Área atendida</h3>
+        <ul class="mt-4 space-y-3 text-sm text-stone-40000">
+          > São Lourenço da Mata</l/li>
+          > Camaragibe</l/li>
+          > Caxangá</l/li>
+          > Várzea</l/li>
+          > Curado</l/li>
+          > Iputinga</l/li>
+          > Outras regiões sob consulta</li>
+        </ul>
+      </div>
     </div>
 
-    <div>
-      <h2 class="mb-3 text-lg font-bold">Links rápidos</h2>
-      <ul class="space-y-2 text-sm text-stone-300">
-        <li><a href="/" class="hover:text-orange-400">Início</a></li>
-        <li><a href="/cardapio" class="hover:text-orange-400">Cardápio</a></li>
-        <li><a href="/contato" class="hover:text-orange-400">Contato</a></li>
-      </ul>
-    </div>
+    <div class="mt-10 border-t border-stone-800 pt-6">
+      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <p class="text-sm text-stone-500">
+          © {currentYear} W.J.F SALGADOS. Todos os direitos reservados.
+        </p>
 
-    <div>
-      <h2 class="mb-3 text-lg font-bold">Atendimento</h2>
-      <p class="text-sm text-stone-300">São Lourenço da Mata, Camaragibe, Caxangá, Várzea, Curado, Iputinga e proximidades.</p>
+        <div class="flex flex-wrap gap-4 text-sm text-stone-500">
+          <a href="/privacidade" class="transition hover:text-orange-400">
+            Política de Privacidade
+          </a>
+          <a href="/termos" class="transition hover:text-orange-400">
+            Termos de Uso
+          </a>
+          <a
+            href="https://instagram.com/w.j.fsalgados/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="transition hover:text-orange-400"
+          >
+            Instagram
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
