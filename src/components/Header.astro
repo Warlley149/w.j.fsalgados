@@ -1,0 +1,24 @@
+---
+import { createWhatsAppLink } from "../lib/whatsapp";
+---
+
+<header class="border-b border-amber-200 bg-white/90 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+    <a href="/" class="text-xl font-bold text-orange-600">W.J.F SALGADOS</a>
+
+    <nav class="hidden gap-6 md:flex">
+      <a href="/" class="font-medium hover:text-orange-600">Início</a>
+      <a href="/cardapio" class="font-medium hover:text-orange-600">Cardápio</a>
+      <a href="/contato" class="font-medium hover:text-orange-600">Contato</a>
+    </nav>
+
+    <a
+      href={createWhatsAppLink("Olá, vim pelo site e quero fazer um pedido de salgados para festa.")}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="rounded-full bg-orange-500 px-5 py-2.5 font-semibold text-white transition hover:bg-orange-600"
+    >
+      Pedir no WhatsApp
+    </a>
+  </div>
+</header>

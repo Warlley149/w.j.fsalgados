@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { products } from "../lib/products";
+import { createCustomOrderMessage, createProductMessage } from "../lib/whatsapp";
+---
+
+<BaseLayout
+  title="Cardápio de Salgados | W.J.F SALGADOS"
+  description="Confira nosso cardápio com salgados para festa, churros, salgados grandes e opções sob encomenda."
+>
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <h1 class="text-4xl font-extrabold text-stone-900">Nosso cardápio</h1>
+    <p class="mt-4 max-w-3xl text-lg text-stone-700">
+      Trabalhamos com opções para festas, lanches e encomendas especiais. Alguns modelos têm preço fixo e outros são personalizados sob consulta.
+    </p>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {products.map((product) => (
+        <article class="rounded-3xl bg-white p-6 shadow-md">
+          <span class="inline-block rounded-full bg-orange-100 px-3 py-1 text-sm font-medium text-orange-700">
+            {product.category}
+          </span>
+
+          <h2 class="mt-4 text-2xl font-bold text-orange-600">{product.name}</h2>
+
+          <p class="mt-3 text-stone-700">{product.description}</p>
+
+          <p class="mt-4 font-semibold text-stone-900">{product.price}</p>
+
+          <a
+            href={
+              product.custom
+                ? createCustomOrderMessage("um orçamento personalizado")
+                : createProductMessage(product.name)
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-5 inline-block rounded-full bg-orange-500 px-5 py-2.5 font-semibold text-white transition hover:bg-orange-600"
+          >
+            {product.custom ? "Solicitar orçamento" : "Pedir este item"}
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
