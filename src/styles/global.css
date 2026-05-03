@@ -12,3 +12,12 @@ body {
 a {
   text-decoration: none;
 }
+
+button,
+a,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+summary {
+  cursor: pointer;
+}

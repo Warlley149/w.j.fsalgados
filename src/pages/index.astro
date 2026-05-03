@@ -9,52 +9,68 @@ import TestimonialsSection from "../components/TestimonialsSection.astro";
 ---
 
 <BaseLayout
-  title="Salgados em São Lourenço da Mata | W.J.F SALGADOS"
+  title="W.J.F SALGADOS | Salgados para festas em São Lourenço da Mata"
   description="Encomende salgados para festas, eventos e momentos especiais em São Lourenço da Mata e região metropolitana do Recife."
 >
-  <section class="bg-gradient-to-br from-amber-100 via-orange-50 to-red-100">
-    <div class="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center">
-      <div>
-        <span class="rounded-full bg-orange-100 px-4 py-1 text-sm font-semibold text-orange-700">
-          Sabor que conquista
-        </span>
+  <section class="hero-showcase">
+    <div class="hero-slides" aria-hidden="true">
+      <img src="/images/salgado-1.png" alt="" class="hero-slide is-active" />
+      <img src="/images/salgado-2.png" alt="" class="hero-slide" />
+      <img src="/images/salgado-3.png" alt="" class="hero-slide" />
+      <img src="/images/salgado-4.png" alt="" class="hero-slide" />
+      <img src="/images/salgado-5.png" alt="" class="hero-slide" />
+      <img src="/images/salgado-6.png" alt="" class="hero-slide" />
+      <img src="/images/salgado-7.png" alt="" class="hero-slide" />
+      <img src="/images/salgado-8.png" alt="" class="hero-slide" />
+    </div>
 
-        <h1 class="mt-5 text-4xl font-extrabold leading-tight text-stone-900 md:text-5xl">
-          Salgados deliciosos para sua festa, evento ou lanche especial
-        </h1>
+    <div class="hero-overlay"></div>
 
-        <p class="mt-5 text-lg text-stone-700">
-          Atendemos São Lourenço da Mata, Camaragibe, Caxangá, Várzea, Curado, Iputinga e proximidades com encomendas caprichadas e atendimento pelo WhatsApp.
-        </p>
+    <div class="hero-content">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center">
+        <div>
+          <span class="rounded-full bg-orange-100 px-4 py-1 text-sm font-semibold text-orange-700">
+            Sabor que conquista
+          </span>
 
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a
-            href="/cardapio"
-            class="rounded-full bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600"
-          >
-            Ver cardápio
-          </a>
+          <h1 class="mt-5 text-4xl font-extrabold leading-tight text-stone-900 md:text-5xl">
+            Salgados deliciosos para sua festa, evento ou lanche especial
+          </h1>
 
-          <a
-            href={createWhatsAppLink("Olá, vim pelo site e quero fazer um pedido de salgados.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="rounded-full border border-orange-500 px-6 py-3 font-semibold text-orange-600 transition hover:bg-orange-50"
-          >
-            Pedir no WhatsApp
-          </a>
+          <p class="mt-5 text-lg text-stone-700">
+            Atendemos São Lourenço da Mata, Camaragibe, Caxangá, Várzea, Curado, Iputinga e proximidades com encomendas caprichadas e atendimento pelo WhatsApp.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href="/cardapio"
+              class="rounded-full bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600"
+            >
+              Ver cardápio
+            </a>
+
+            <a
+              href={createWhatsAppLink("Olá, vim pelo site e quero fazer um pedido de salgados.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-full border border-orange-500 px-6 py-3 font-semibold text-orange-600 transition hover:bg-orange-50"
+            >
+              Pedir no WhatsApp
+            </a>
+          </div>
         </div>
-      </div>
 
-      <div class="rounded-3xl bg-white p-6 shadow-lg">
-        <h2 class="text-2xl font-bold text-stone-900">Destaques</h2>
-        <ul class="mt-5 space-y-3 text-stone-700">
-          • Coxinhas, rissoles, empadinhas e travesseirinhos</li>
-          • Churros pequenos e grandes</li>
-          • Mini coxinhas de copo</li>
-          • Combos para festas e encomendas personalizadas</li>
-          • Retirada, motoUber e entrega sob consulta</li>
-        </ul>
+        <div class="rounded-3xl bg-white/90 p-6 shadow-lg backdrop-blur-sm">
+          <h2 class="text-2xl font-bold text-stone-900">Destaques</h2>
+
+          <ul class="mt-5 space-y-3 text-stone-70000">
+            >Coxinhas, rissoles, empadinhas e travesseirinhos</l/li>
+            >Churros pequenos e grandes</l/li>
+            >Mini coxinhas de copo</l/li>
+            >Combos para festas e encomendas personalizadas</l/li>
+            >Retirada, motoUber e entrega sob consulta</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -64,4 +80,60 @@ import TestimonialsSection from "../components/TestimonialsSection.astro";
   <HowItWorksSection />
   <PartyCombosSection />
   <TestimonialsSection />
+
+
+  <script src="../scripts/hero-slideshow.js"></script>
 </BaseLayout>
+
+<style>
+  .hero-showcase {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .hero-slides {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 900ms ease;
+  }
+
+  .hero-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      135deg,
+      rgb(255 248 220 / 0.88),
+      rgb(255 243 230 / 0.82),
+      rgb(255 236 236 / 0.84)
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slide {
+      transition: opacity 200ms ease;
+    }
+  }
+</style>
